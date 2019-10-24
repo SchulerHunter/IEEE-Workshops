@@ -8,8 +8,8 @@
 
 /* Set these to your desired AP credentials. They are not configurable at runtime */
 #ifndef APSSID
-#define APSSID "ESP_ap"
-#define APPSK  "12345678"
+#define APSSID "test_captive"
+#define APPSK  ""
 #endif
 
 const char *softAP_ssid = APSSID;
