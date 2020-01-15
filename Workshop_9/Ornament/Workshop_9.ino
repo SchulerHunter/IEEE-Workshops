@@ -130,7 +130,7 @@ int trans[] = {
 //};
 
 // Santa Claus is coming to town
-
+//
 //int melody[] = {
 //  NOTE_G4,
 //  NOTE_E4, NOTE_F4, NOTE_G4, NOTE_G4, NOTE_G4,
@@ -290,17 +290,16 @@ void buzz(long frequency, int color[3], int trans, long length) {
       delayMicroseconds(delayValue);
     }
   } else {
-    for (long i = 0; i < numCycles; i++) {
-      // Blink the LED to the color
-      // First set everything to black, then to color
-      analogWrite(rPin, 0);
-      analogWrite(gPin, 0);
-      analogWrite(bPin, 0);
-      delayMicroseconds(10);
-      analogWrite(rPin, R);
-      analogWrite(gPin, G);
-      analogWrite(bPin, B);
-  
+    // Blink the LED to the color
+    // First set everything to black, then to color
+    analogWrite(rPin, 0);
+    analogWrite(gPin, 0);
+    analogWrite(bPin, 0);
+    delay(10);
+    analogWrite(rPin, R);
+    analogWrite(gPin, G);
+    analogWrite(bPin, B);
+    for (long i = 0; i < numCycles; i++) {  
       digitalWrite(melodyPin, HIGH);
       delayMicroseconds(delayValue);
       digitalWrite(melodyPin, LOW);
