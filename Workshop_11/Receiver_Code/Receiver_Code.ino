@@ -5,10 +5,10 @@
 #define RECV_PIN 4
  
 // Define LED pin constants
-#define bluePin 8 
-#define greenPin 7
-#define yellowPin 6 
-#define redPin 5
+#define bluePin 10
+#define greenPin 11
+#define yellowPin 12 
+#define redPin 13
  
 // Define integer to remember toggle state
 int togglestate = 0;
