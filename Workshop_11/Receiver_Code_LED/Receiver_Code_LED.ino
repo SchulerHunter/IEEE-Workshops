@@ -12,7 +12,12 @@
  
 // Define integer to remember toggle state
 int togglestate = 0;
- 
+
+float blueClock = 0;
+float greenClock = 0;
+float yellowClock = 0;
+float redClock = 0;
+
 // Define IR Receiver and Results Objects
 IRrecv irrecv(RECV_PIN);
 decode_results results;
@@ -30,35 +35,47 @@ void setup(){
  
  
 void loop(){
+    blueClock--;
+    if (blueClock == 0) {
+      digitalWrite(bluePin, LOW);
+    }
+    greenClock--;
+    if (greenClock == 0) {
+      digitalWrite(greenPin, LOW);
+    }
+    yellowClock--;
+    if (yellowClock == 0) {
+      digitalWrite(yellowPin, LOW);
+    }
+    redClock--;
+    if (redClock == 0) {
+      digitalWrite(redPin, LOW);
+    }
     if (irrecv.decode(&results)){
  
         switch(results.value){
           case 0x20DF4EB1: //Blue Keypad Button
         // Turn on LED for 2 Seconds
         digitalWrite(bluePin, HIGH);
-        delay(2000);
-        digitalWrite(bluePin, LOW);
+        blueClock = 25000;
         break;
 
           case 0x20DF8E71: //Green Keypad Button
         // Turn on LED for 2 Seconds
         digitalWrite(greenPin, HIGH);
-        delay(2000);
-        digitalWrite(greenPin, LOW);
+        greenClock = 25000;
         break;
         
           case 0x20DFC639: //Yellow Keypad Button
         // Turn on LED for 2 Seconds
         digitalWrite(yellowPin, HIGH);
-        delay(2000);
-        digitalWrite(yellowPin, LOW);
+        yellowClock = 25000;
         break;
         
           case 0x20DF8679: //Red Keypad Button
         // Turn on LED for 2 Seconds
         digitalWrite(redPin, HIGH);
-        delay(2000);
-        digitalWrite(redPin, LOW);
+        redClock = 25000;
         break;
         
       /*    case 0xFE8A75: //Yellow Keypad Button
