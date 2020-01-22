@@ -1,17 +1,6 @@
-/*
-  IR Receiver Demonstration 2
-  IR-Rcv-Demo2.ino
-  Determine IR codes manufacturer type with IR Receiver
-  Displays results on Serial Monitor
-  DroneBot Workshop 2017
-  http://dronebotworkshop.com
-*/
- 
 // Include IR Remote Library by Ken Shirriff
 #include <IRremote.h>
- 
-// Define sensor pin
-const int RECV_PIN = 4;
+#define RECV_PIN 4
  
 // Define IR Receiver and Results Objects
 IRrecv irrecv(RECV_PIN);
