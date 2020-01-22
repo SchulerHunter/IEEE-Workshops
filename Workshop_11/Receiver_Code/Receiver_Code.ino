@@ -2,13 +2,13 @@
 #include <IRremote.h>
  
 // Define sensor pin
-const int RECV_PIN = 4;
+#define RECV_PIN 4
  
 // Define LED pin constants
-const int bluePin = 8; 
-const int greenPin = 7;
-const int yellowPin = 6; 
-const int redPin = 5;
+#define bluePin 8 
+#define greenPin 7
+#define yellowPin 6 
+#define redPin 5
  
 // Define integer to remember toggle state
 int togglestate = 0;
